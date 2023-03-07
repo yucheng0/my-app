@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+
+import {LoginSocialFacebook} from 'reactjs-social-login'
+import {FacebookLoginButton} from 'react-social-login-buttons'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LoginSocialFacebook
+    appId = "1242100280072160"
+    onResolve={(reponse)=>{
+      console.log(reponse)
+    }}
+    onReject = {(error)=>{
+      console.log (error)
+    }}
+    >
+   <FacebookLoginButton/>
+
+    </LoginSocialFacebook>
   );
 }
 
